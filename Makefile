@@ -37,7 +37,7 @@ $(OBJDIR):
 	mkdir -p $(OBJDIR)
 	$(foreach src,$(SRCS),mkdir -p $(OBJDIR)/$(dir $(src));)
 
-$(OBJDIR)/%.o: $(SRCS) $(HEADER) | $(OBJDIR)
+$(OBJDIR)/%.o: %.c $(HEADER) | $(OBJDIR)
 	@mkdir -p $(@D)
 	@echo "$(YELLOW)Libft is compiling...$(RESET)"
 	@$(CC) $(CFLAGS) -I. -c $< -o $@
