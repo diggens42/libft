@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2024/04/13 22:29:27 by fwahl            ###   ########.fr       */
+/*   Updated: 2024/04/13 22:40:41 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,13 @@ typedef struct s_list
 }	t_list;
 
 // Character checking functions
-int				ft_isalpha(int c);
-int				ft_isdigit(int c);
-int				ft_isalnum(int c);
-int				ft_isascii(int c);
-int				ft_isprint(int c);
-int				ft_issign(int c);
+bool			ft_isalpha(int c);
+bool			ft_isdigit(int c);
+bool			ft_isalnum(int c);
+bool			ft_isascii(int c);
+bool			ft_isprint(int c);
+bool			ft_issign(int c);
+bool			ft_isspace(int c);
 // Memory manipulation functions
 void			*ft_realloc(void *ptr, size_t new_size);
 void			*ft_memset(void *b, int c, size_t len);
