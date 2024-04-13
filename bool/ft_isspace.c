@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strarray_len.c                                  :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/13 15:36:41 by fwahl             #+#    #+#             */
-/*   Updated: 2024/04/13 22:32:43 by fwahl            ###   ########.fr       */
+/*   Created: 2024/04/13 22:27:49 by fwahl             #+#    #+#             */
+/*   Updated: 2024/04/13 22:28:09 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_strarray_len(char **array)
+bool	ft_isspace(int c)
 {
-	int	len;
-
-	if (array == NULL)
-		return (0);
-	len = 0;
-	while (array[len] != NULL)
-		len++;
-	return (len);
+	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r'
+		|| c == ' ')
+		return (true);
+	return (false);
 }

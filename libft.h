@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2024/04/13 16:58:00 by fwahl            ###   ########.fr       */
+/*   Updated: 2024/04/13 22:29:27 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #  define BUFFER_SIZE 42
 # endif
 
+# include <stdbool.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
@@ -114,6 +115,5 @@ int				ft_put_str_len(char *str);
 int				ft_put_nbr_len(long num);
 int				ft_put_ptr_len(unsigned long num);
 unsigned long	ft_put_base_len(unsigned long num, int base, int upper);
-
 
 #endif
