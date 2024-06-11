@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2024/06/11 17:53:33 by fwahl            ###   ########.fr       */
+/*   Updated: 2024/06/11 18:04:51 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ bool			ft_isascii(int c);
 bool			ft_isprint(int c);
 bool			ft_issign(int c);
 bool			ft_isspace(int c);
-bool			is_nextline(char c);
+bool			ft_isnextline(char c);
 // Memory manipulation functions
 void			*ft_realloc(void *ptr, size_t new_size);
 void			*ft_memset(void *b, int c, size_t len);
@@ -88,6 +88,7 @@ void			*ft_calloc(size_t count, size_t size);
 // IO related functions
 int				ft_printf(const char *f, ...);
 char			*get_next_line(int fd);
+char			*cut_next_line(char *line);
 void			ft_putbase(unsigned long num, int base, int upper);
 void			ft_putint(long num);
 void			ft_putptr(unsigned long num);

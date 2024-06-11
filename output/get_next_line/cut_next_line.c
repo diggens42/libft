@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnextline.c                                    :+:      :+:    :+:   */
+/*   cut_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/11 17:52:05 by fwahl             #+#    #+#             */
-/*   Updated: 2024/06/11 18:04:23 by fwahl            ###   ########.fr       */
+/*   Created: 2024/06/11 18:02:20 by fwahl             #+#    #+#             */
+/*   Updated: 2024/06/11 18:05:12 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
-bool	ft_isnextline(char c)
+char	*cut_next_line(char *line)
 {
-	if (c == '\n')
-		return (true);
-	else
-		return (false);
+	int	i;
+
+	i = 0;
+	while (line[i] != '\0')
+	{
+		if (ft_isnextline(line[i]))
+			line[i] = '\0';
+		i++;
+	}
+	return (line);
 }
