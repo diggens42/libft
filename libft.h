@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2024/06/11 18:04:51 by fwahl            ###   ########.fr       */
+/*   Updated: 2024/06/11 18:10:01 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void			*ft_calloc(size_t count, size_t size);
 // IO related functions
 int				ft_printf(const char *f, ...);
 char			*get_next_line(int fd);
-char			*cut_next_line(char *line);
+void			cut_next_line(char *line);
 void			ft_putbase(unsigned long num, int base, int upper);
 void			ft_putint(long num);
 void			ft_putptr(unsigned long num);
