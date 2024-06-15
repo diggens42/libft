@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2024/06/11 18:10:01 by fwahl            ###   ########.fr       */
+/*   Updated: 2024/06/15 17:52:23 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,6 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
 
 //printf
-int				ft_printf(const char *string, ...);
 int				ft_check_format(const char format, va_list *ap);
 int				ft_put_chr_len(int c);
 int				ft_put_str_len(char *str);

@@ -3,116 +3,107 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mott <mott@student.42heilbronn.de>         +#+  +:+       +#+        */
+/*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 20:36:04 by fwahl             #+#    #+#             */
-/*   Updated: 2024/04/17 21:30:15 by mott             ###   ########.fr       */
+/*   Created: 2024/06/12 20:02:24 by fwahl             #+#    #+#             */
+/*   Updated: 2024/06/15 17:59:08 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 1024
+#endif
+#define ERROR -2
 
-static char	*get_line_from_buff(char *buffer)
+static long	find_buffer_eol(char *buffer)
 {
-	char	*line;
-	int		i;
-	int		j;
+	long	i;
 
 	i = 0;
-	while (buffer[i] != '\n' && buffer[i] != '\0')
+	if (ft_isnextline(buffer[0]))
+		return (1);
+	while (i < BUFFER_SIZE && buffer[i] && !ft_isnextline(buffer[i]))
 		i++;
-	if (buffer[i] == '\n')
+	if (i < BUFFER_SIZE && ft_isnextline(buffer[i]))
 		i++;
-	line = malloc(sizeof(char) * (i + 1));
-	if (!line)
-		return (NULL);
-	j = 0;
-	while (i > j++)
-		line[j - 1] = buffer[j - 1];
-	line[i] = '\0';
-	return (line);
+	return (i);
 }
 
-static char	*read_to_buff(int fd, char *buffer)
+static long	realloc_line(long len, char **line)
 {
-	size_t	nbytes;
-	char	read_string[BUFFER_SIZE + 1];
-	char	*temp;
+	long	old_len;
+	char	*new_line;
 
-	if (read(fd, NULL, 0) == -1)
+	old_len = ft_strlen(*line);
+	new_line = ft_calloc(old_len + len + 1, sizeof(char));
+	if (new_line == NULL)
+		return (ERROR);
+	ft_memcpy(new_line, *line, old_len);
+	free(*line);
+	*line = new_line;
+	return (old_len);
+}
+
+static int	alloc_line(char **line, long len)
+{
+	int	offset;
+
+	offset = 0;
+	if (*line == NULL)
 	{
-		free(buffer);
-		return (NULL);
+		*line = ft_calloc((len + 1), sizeof(char));
+		if (*line == NULL)
+			return (ERROR);
 	}
-	while (1)
+	else
+		offset = realloc_line(len, line);
+	return (offset);
+}
+
+static long	copy_line_to_buffer(char **line, char *buffer, long len)
+{
+	long	i;
+	long	offset;
+
+	offset = alloc_line(line, len);
+	if (offset == ERROR)
+		return (ERROR);
+	i = 0;
+	while (i <= len && i < BUFFER_SIZE && buffer[i])
 	{
-		nbytes = read(fd, read_string, BUFFER_SIZE);
-		if (nbytes == 0)
-			return (buffer);
-		if (nbytes <= BUFFER_SIZE)
-			read_string[nbytes] = '\0';
-		temp = ft_strjoin(buffer, read_string);
-		if (temp == NULL)
-			return (NULL);
-		free(buffer);
-		buffer = temp;
-		if (ft_strchr(buffer, '\n'))
+		(*line)[offset + i] = buffer[i];
+		if (ft_isnextline(buffer[i++]))
 			break ;
 	}
-	return (buffer);
-}
-
-static char	*get_remain(char *buffer)
-{
-	char	*remain;
-	char	*buff_ptr;
-	char	*dest;
-
-	buff_ptr = buffer;
-	while (*buff_ptr && *buff_ptr != '\n')
-		buff_ptr++;
-	if (*buff_ptr == '\0')
-	{
-		free(buffer);
-		return (NULL);
-	}
-	remain = malloc(sizeof(char) * (ft_strlen(buff_ptr) + 1));
-	buff_ptr++;
-	dest = remain;
-	if (!remain)
-		return (NULL);
-	while (*buff_ptr != 0)
-		*dest++ = *buff_ptr++;
-	*dest = '\0';
-	free(buffer);
-	return (remain);
+	if (ft_isnextline((*line)[i + offset - 1]))
+		len = -1;
+	return (len);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
-	char		*next_line;
+	static char	buffer[BUFFER_SIZE];
+	char		*line;
+	long		len;
+	int			nbytes;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	line = NULL;
+	nbytes = read(fd, buffer, BUFFER_SIZE);
+	while (nbytes > 0 || buffer[0])
 	{
-		if (buffer)
-			free(buffer);
-		return (NULL);
-	}
-	if (!buffer)
-	{
-		buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-		if (!buffer)
+		if (nbytes < 0)
 			return (NULL);
+		len = find_buffer_eol(buffer);
+		len = copy_line_to_buffer(&line, buffer, len);
+		if (len < 0)
+		{
+			if (len == ERROR && line)
+				free(line);
+			break ;
+		}
+		if (buffer[0] == '\0')
+			nbytes = read(fd, buffer, BUFFER_SIZE);
 	}
-	buffer = read_to_buff(fd, buffer);
-	if (buffer == NULL || (buffer[0] == '\0'))
-	{
-		if (buffer)
-			free(buffer);
-		return (NULL);
-	}
-	next_line = get_line_from_buff(buffer);
-	buffer = get_remain(buffer);
-	return (next_line);
+	return (line);
 }
