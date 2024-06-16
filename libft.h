@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2024/06/15 17:52:23 by fwahl            ###   ########.fr       */
+/*   Updated: 2024/06/16 18:36:24 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,6 @@ char			*ft_itoa(int n);
 // Memory allocation
 void			*ft_calloc(size_t count, size_t size);
 // IO related functions
-int				ft_printf(const char *f, ...);
-char			*get_next_line(int fd);
-void			cut_next_line(char *line);
 void			ft_putbase(unsigned long num, int base, int upper);
 void			ft_putint(long num);
 void			ft_putptr(unsigned long num);
@@ -112,11 +109,18 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
 
 //printf
+int				ft_printf(const char *f, ...);
 int				ft_check_format(const char format, va_list *ap);
 int				ft_put_chr_len(int c);
 int				ft_put_str_len(char *str);
 int				ft_put_nbr_len(long num);
 int				ft_put_ptr_len(unsigned long num);
 unsigned long	ft_put_base_len(unsigned long num, int base, int upper);
+
+//get_next_line
+char			*get_next_line(int fd);
+void			cut_next_line(char *line);
+void			read_error(int error, char *buffer, char **line);
+long			shift_reset_buffer(long len, char *buffer);
 
 #endif
