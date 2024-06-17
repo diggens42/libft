@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2024/06/16 18:36:24 by fwahl            ###   ########.fr       */
+/*   Updated: 2024/06/17 15:39:50 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+# define DEBUG() ft_debug(__FILE__, __LINE__)
 
 # include <stdbool.h>
 # include <stdlib.h>
@@ -24,6 +25,7 @@
 # include <fcntl.h>
 # include <sys/select.h>
 # include <stdint.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
@@ -86,6 +88,7 @@ char			*ft_itoa(int n);
 // Memory allocation
 void			*ft_calloc(size_t count, size_t size);
 // IO related functions
+void			ft_debug(const char *file, int line);
 void			ft_putbase(unsigned long num, int base, int upper);
 void			ft_putint(long num);
 void			ft_putptr(unsigned long num);
