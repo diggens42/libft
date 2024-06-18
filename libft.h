@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2024/06/17 15:39:50 by fwahl            ###   ########.fr       */
+/*   Updated: 2024/06/18 18:37:48 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			ft_free_strarray(char **str);
 // String manipulation and checking functions
 char			**ft_strarray_append(char **array, char *str);
+char 			**ft_strarray_dup(char **array);
 int				ft_strarray_len(char **array);
 size_t			ft_strlen(const char *str);
 size_t			ft_strlcpy(char *dest, const char *src, size_t size);

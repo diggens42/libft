@@ -16,7 +16,7 @@ SRCS =	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_isspa
 		ft_debug.c get_next_line.c get_next_line_utils.c get_next_line_bonus.c cut_next_line.c ft_printf.c put_chars.c put_numbers.c \
 		ft_putbase.c ft_putchar_fd.c ft_putchar.c ft_putendl_fd.c ft_putint.c ft_putnbr_fd.c ft_putptr.c ft_putstr_fd.c ft_putstr.c \
 		\
-		ft_strarray_append.c ft_strarray_len.c ft_split.c ft_strdup.c ft_strndup.c ft_striteri.c ft_strjoin.c ft_strjoin_free.c \
+		ft_strarray_dup.c ft_strarray_append.c ft_strarray_len.c ft_split.c ft_strdup.c ft_strndup.c ft_striteri.c ft_strjoin.c ft_strjoin_free.c \
 		ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strcmp.c ft_strncmp.c ft_strnstr.c ft_strchr.c ft_strrchr.c ft_strstr.c \
 		ft_strrstr.c ft_strrev.c ft_strtrim.c ft_substr.c ft_strtok.c ft_strspn.c ft_strcspn.c
 
