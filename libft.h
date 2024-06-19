@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2024/06/18 18:37:48 by fwahl            ###   ########.fr       */
+/*   Updated: 2024/06/19 17:12:25 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ unsigned long	ft_put_base_len(unsigned long num, int base, int upper);
 
 //get_next_line
 char			*get_next_line(int fd);
+char			*get_next_line_cut(int fd);
 void			cut_next_line(char *line);
 void			read_error(int error, char *buffer, char **line);
 long			shift_reset_buffer(long len, char *buffer);
