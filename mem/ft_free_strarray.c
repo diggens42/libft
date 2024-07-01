@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 16:56:46 by fwahl             #+#    #+#             */
-/*   Updated: 2024/04/13 16:57:12 by fwahl            ###   ########.fr       */
+/*   Updated: 2024/07/01 14:39:15 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_free_strarray(char **str)
 	int	i;
 
 	i = 0;
-	while (str[i] != NULL)
+	while (str[i] != '\0')
 	{
 		free(str[i]);
 		i++;
