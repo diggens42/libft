@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2024/06/19 17:12:25 by fwahl            ###   ########.fr       */
+/*   Updated: 2024/07/02 18:20:34 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
-# define DEBUG() ft_debug(__FILE__, __LINE__)
+// # define DEBUG() ft_debug(__FILE__, __LINE__)
 
 # include <stdbool.h>
 # include <stdlib.h>
@@ -53,7 +53,7 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			ft_free_strarray(char **str);
 // String manipulation and checking functions
 char			**ft_strarray_append(char **array, char *str);
-char 			**ft_strarray_dup(char **array);
+char			**ft_strarray_dup(char **array);
 int				ft_strarray_len(char **array);
 size_t			ft_strlen(const char *str);
 size_t			ft_strlcpy(char *dest, const char *src, size_t size);
