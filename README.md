@@ -23,6 +23,7 @@ This project was built from scratch for learning purposes — to better understa
 
 - `ft_atoi` – Converts a string to an integer.
 - `ft_atol` – Converts a string to a long.
+- `ft_atoll`  – Converts a string to a long long.
 - `ft_atodbl` – Converts a string to a double.
 - `ft_itoa` – Converts an integer to a string.
 
