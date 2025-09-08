@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
+/*   By: fwahl <fwahl@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2024/07/02 18:20:34 by fwahl            ###   ########.fr       */
+/*   Updated: 2025/09/09 00:40:21 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ int				ft_toupper(int c);
 int				ft_tolower(int c);
 int				ft_atoi(const char *s);
 long			ft_atol(const char *s);
+long long		ft_atoll(const char *s);
 double			ft_atodbl(const char *s);
 char			*ft_itoa(int n);
 // Memory allocation
