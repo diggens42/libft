@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   ft_atolll.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwahl <fwahl@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 21:03:44 by fwahl             #+#    #+#             */
-/*   Updated: 2025/09/08 19:18:29 by fwahl            ###   ########.fr       */
+/*   Updated: 2025/09/08 19:17:44 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-long	ft_atol(const char *s)
+long long	ft_atoll(const char *s)
 {
-	long	result;
-	long	sign;
+	long long	result;
+	long long	sign;
 
 	result = 0;
 	sign = 1;
