@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2025/09/11 00:09:07 by fwahl            ###   ########.fr       */
+/*   Updated: 2025/09/11 00:40:27 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@
 # include <stdint.h>
 # include <stdio.h>
 # include <netinet/ip_icmp.h>
+# include <errno.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -88,6 +90,7 @@ int				ft_atoi(const char *s);
 long			ft_atol(const char *s);
 long long		ft_atoll(const char *s);
 double			ft_atodbl(const char *s);
+long			ft_strtol(const char *str, char **endptr, int base);
 char			*ft_itoa(int n);
 // Memory allocation
 void			*ft_calloc(size_t count, size_t size);
