@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2025/09/09 00:40:21 by fwahl            ###   ########.fr       */
+/*   Updated: 2025/09/11 00:09:07 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # include <sys/select.h>
 # include <stdint.h>
 # include <stdio.h>
+# include <netinet/ip_icmp.h>
 
 typedef struct s_list
 {
@@ -42,6 +43,7 @@ bool			ft_isprint(int c);
 bool			ft_issign(int c);
 bool			ft_isspace(int c);
 bool			ft_isnextline(char c);
+bool			ft_is_icmp_type(uint8_t type);
 // Memory manipulation functions
 void			*ft_realloc(void *ptr, size_t new_size);
 void			*ft_memset(void *b, int c, size_t len);
