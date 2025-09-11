@@ -5,9 +5,9 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 HEADER = libft.h
 
-SRCS =	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_isspace.c ft_isnextline.c ft_is_icmp_type.c\
+SRCS =	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_isspace.c ft_isnextline.c ft_is_icmp_type.c \
 		\
-		ft_atoi.c ft_atol.c ft_atoll.c ft_atodbl.c ft_itoa.c ft_tolower.c ft_toupper.c ft_strtol.c ft_strtoul.c \
+		ft_atoi.c ft_atol.c ft_atoll.c ft_atodbl.c ft_itoa.c ft_tolower.c ft_toupper.c ft_strtol.c ft_strtoul.c ft_strtod.c \
 		\
 		ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c \
 		\
@@ -18,9 +18,11 @@ SRCS =	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_isspa
 		\
 		ft_strarray_dup.c ft_strarray_append.c ft_strarray_len.c ft_split.c ft_strdup.c ft_strndup.c ft_striteri.c ft_strjoin.c ft_strjoin_free.c \
 		ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strcmp.c ft_strncmp.c ft_strnstr.c ft_strchr.c ft_strrchr.c ft_strstr.c \
-		ft_strrstr.c ft_strrev.c ft_strtrim.c ft_substr.c ft_strtok.c ft_strspn.c ft_strcspn.c
+		ft_strrstr.c ft_strrev.c ft_strtrim.c ft_substr.c ft_strtok.c ft_strspn.c ft_strcspn.c \
+		\
+		ft_pow.c
 
-vpath %.c bool conversion linked_list mem output/get_next_line output/ft_printf output str
+vpath %.c bool conversion linked_list math mem output/get_next_line output/ft_printf output str
 vpath %.h .
 
 OBJDIR = obj

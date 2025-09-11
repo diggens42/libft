@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2025/09/11 01:42:07 by fwahl            ###   ########.fr       */
+/*   Updated: 2025/09/11 02:22:34 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ int				ft_atoi(const char *s);
 long			ft_atol(const char *s);
 long long		ft_atoll(const char *s);
 double			ft_atodbl(const char *s);
+double			ft_strtod(const char *str, char **endptr);
 long			ft_strtol(const char *str, char **endptr, int base);
 unsigned long	ft_strtoul(const char *nptr, char **endptr, int base);
 char			*ft_itoa(int n);
@@ -118,6 +119,8 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
+// math
+double			ft_pow(double base, int exp);
 
 //printf
 int				ft_printf(const char *f, ...);
