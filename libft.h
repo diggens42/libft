@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fwahl <fwahl@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2025/09/13 04:06:19 by fwahl            ###   ########.fr       */
+/*   Updated: 2025/09/13 20:43:08 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ bool			ft_isascii(int c);
 bool			ft_isprint(int c);
 bool			ft_issign(int c);
 bool			ft_isspace(int c);
+bool            ft_isupper(int c);
+bool            ft_islower(int c);
 bool			ft_isnextline(char c);
 bool			ft_is_icmp_type(uint8_t type);
 // Memory manipulation functions
