@@ -20,9 +20,11 @@ SRCS =	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_isspa
 		ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strcmp.c ft_strncmp.c ft_strnstr.c ft_strchr.c ft_strrchr.c ft_strstr.c \
 		ft_strrstr.c ft_strrev.c ft_strtrim.c ft_substr.c ft_strtok.c ft_strspn.c ft_strcspn.c \
 		\
-		ft_pow.c
+		ft_pow.c \
+		\
+		ft_time_substract.c ft_time_to_ms.c ft_time_to_us.c
 
-vpath %.c bool conversion linked_list math mem output/get_next_line output/ft_printf output str
+vpath %.c bool conversion linked_list math mem time output/get_next_line output/ft_printf output str
 vpath %.h .
 
 OBJDIR = obj

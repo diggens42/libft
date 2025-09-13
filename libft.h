@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2025/09/11 02:22:34 by fwahl            ###   ########.fr       */
+/*   Updated: 2025/09/13 04:06:19 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,11 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
 // math
 double			ft_pow(double base, int exp);
+
+//time
+void			ft_time_substract(struct timeval *result, struct timeval *a, struct timeval *b);
+double			ft_time_to_ms(struct timeval *tv);
+long 			ft_time_to_us(struct timeval *tv);
 
 //printf
 int				ft_printf(const char *f, ...);
