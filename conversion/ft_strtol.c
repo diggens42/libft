@@ -3,28 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtol.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fwahl <fwahl@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 00:30:17 by fwahl             #+#    #+#             */
-/*   Updated: 2025/09/11 00:39:28 by fwahl            ###   ########.fr       */
+/*   Updated: 2025/09/13 19:57:43 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-long	ft_strtol(const char *str, char **endptr, int base)
+long ft_strtol(const char *str, char **endptr, int base)
 {
-    long            result;
-    int             sign;
-    const char      *s;
+    unsigned long   acc = 0;
     unsigned long   cutoff;
     int             cutlim;
-    int             any;
-
-    s = str;
-    result = 0;
-    sign = 1;
-    any = 0;
+    int             sign = 1;
+    const char      *s = str;
+    int             any = 0;
 
     while (ft_isspace(*s))
         s++;
@@ -54,68 +49,46 @@ long	ft_strtol(const char *str, char **endptr, int base)
     }
     else if (base < 2 || base > 36)
     {
-        if (endptr)
-            *endptr = (char *)str;
+        if (endptr) *endptr = (char *)str;
         errno = EINVAL;
-        return (0);
+        return 0;
     }
 
     if (base == 16 && s[0] == '0' && (s[1] == 'x' || s[1] == 'X'))
         s += 2;
 
-    cutoff = (unsigned long)LONG_MAX / base;
-    cutlim = (unsigned long)LONG_MAX % base;
-    if (sign == -1)
-    {
-        cutoff = (unsigned long)LONG_MIN / base;
-        cutlim = (unsigned long)LONG_MIN % base;
-    }
+    cutoff = (sign > 0) ? LONG_MAX : -(unsigned long)LONG_MIN;
+    cutlim = cutoff % base;
+    cutoff /= base;
 
-    while (true)
+    while (*s)
     {
         int digit;
 
         if (ft_isdigit(*s))
             digit = *s - '0';
-        else if (ft_toupper(*s) >= 'A' && ft_toupper(*s) <= 'Z')
+        else if (ft_isalpha(*s))
             digit = ft_toupper(*s) - 'A' + 10;
         else
             break;
+
         if (digit >= base)
             break;
-        if (sign == 1)
+
+        if (acc > cutoff || (acc == cutoff && (unsigned)digit > (unsigned)cutlim))
         {
-            if (result > cutoff || (result == cutoff && digit > cutlim))
-            {
-                errno = ERANGE;
-                if (endptr)
-                    *endptr = (char *)s;
-                return (LONG_MAX);
-            }
-        }
-        else
-        {
-            if (result < cutoff || (result == cutoff && digit > -cutlim))
-            {
-                errno = ERANGE;
-                if (endptr)
-                    *endptr = (char *)s;
-                return (LONG_MIN);
-            }
+            errno = ERANGE;
+            return (sign > 0) ? LONG_MAX : LONG_MIN;
         }
 
-        result = result * base + digit * sign;
-        s++;
+        acc = acc * base + digit;
         any = 1;
+        s++;
     }
+
 
     if (endptr)
-    {
-        if (any)
-            *endptr = (char *)s;
-        else
-            *endptr = (char *)str;
-    }
+        *endptr = (char *)(any ? s : str);
 
-    return (result);
+    return ((sign > 0) ? (long)acc : -(long)acc);
 }
