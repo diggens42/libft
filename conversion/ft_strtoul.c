@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 01:34:49 by fwahl             #+#    #+#             */
-/*   Updated: 2025/09/13 20:37:15 by fwahl            ###   ########.fr       */
+/*   Updated: 2025/09/13 20:45:45 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 unsigned long ft_strtoul(const char *nptr, char **endptr, int base)
 {
     const char *s = nptr;
-    unsigned long acc;
-    int c;
-    unsigned long cutoff;
+    unsigned long acc = 0;
+    int c = *s;
+    unsigned long cutoff = 0;
     int neg = 0;
     int any = 0;
 
-    c = *s;
     while (ft_isspace(c))
         c = *++s;
 
