@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtoul.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fwahl <fwahl@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 01:34:49 by fwahl             #+#    #+#             */
-/*   Updated: 2025/09/11 01:42:15 by fwahl            ###   ########.fr       */
+/*   Updated: 2025/09/13 20:37:15 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ unsigned long ft_strtoul(const char *nptr, char **endptr, int base)
     int any = 0;
 
     c = *s;
-    while (isspace(c))
+    while (ft_isspace(c))
         c = *++s;
 
     if (c == '-')
@@ -58,10 +58,10 @@ unsigned long ft_strtoul(const char *nptr, char **endptr, int base)
 
     while (true)
     {
-        if (isdigit(c))
+        if (ft_isdigit(c))
             c -= '0';
-        else if (isalpha(c))
-            c -= (isupper(c) ? 'A' - 10 : 'a' - 10);
+        else if (ft_isalpha(c))
+            c -= (ft_isupper(c) ? 'A' - 10 : 'a' - 10);
         else
             break;
 
