@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2025/09/24 17:02:58 by fwahl            ###   ########.fr       */
+/*   Updated: 2025/09/24 17:19:04 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # include <stdio.h>
 # include <errno.h>
 # include <limits.h>
+# include <math.h>
 
 typedef struct s_list
 {
