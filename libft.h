@@ -6,7 +6,7 @@
 /*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2025/09/13 20:43:08 by fwahl            ###   ########.fr       */
+/*   Updated: 2025/09/24 17:02:58 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 # include <sys/select.h>
 # include <stdint.h>
 # include <stdio.h>
-# include <netinet/ip_icmp.h>
 # include <errno.h>
 # include <limits.h>
 
@@ -47,7 +46,6 @@ bool			ft_isspace(int c);
 bool            ft_isupper(int c);
 bool            ft_islower(int c);
 bool			ft_isnextline(char c);
-bool			ft_is_icmp_type(uint8_t type);
 // Memory manipulation functions
 void			*ft_realloc(void *ptr, size_t new_size);
 void			*ft_memset(void *b, int c, size_t len);
@@ -85,6 +83,7 @@ char			*ft_strtok(char	*str, const char *delimiter);
 size_t			ft_strspn(const char *str, const char *charset);
 size_t			ft_strcspn(const char *str, const char *charset);
 char			**ft_split(char const *s, char c);
+int             ft_strcasecmp(const char *s1, const char *s2);
 // Character conversion functions
 int				ft_toupper(int c);
 int				ft_tolower(int c);
