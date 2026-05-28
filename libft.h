@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fwahl <fwahl@student.42.fr>                +#+  +:+       +#+        */
+/*   By: fwahl <fwahl@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:04:53 by fwahl             #+#    #+#             */
-/*   Updated: 2025/09/24 17:19:04 by fwahl            ###   ########.fr       */
+/*   Updated: 2026/05/28 16:02:49 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ bool			ft_isascii(int c);
 bool			ft_isprint(int c);
 bool			ft_issign(int c);
 bool			ft_isspace(int c);
-bool            ft_isupper(int c);
-bool            ft_islower(int c);
+bool			ft_isupper(int c);
+bool			ft_islower(int c);
 bool			ft_isnextline(char c);
 // Memory manipulation functions
 void			*ft_realloc(void *ptr, size_t new_size);
@@ -84,7 +84,7 @@ char			*ft_strtok(char	*str, const char *delimiter);
 size_t			ft_strspn(const char *str, const char *charset);
 size_t			ft_strcspn(const char *str, const char *charset);
 char			**ft_split(char const *s, char c);
-int             ft_strcasecmp(const char *s1, const char *s2);
+int				ft_strcasecmp(const char *s1, const char *s2);
 // Character conversion functions
 int				ft_toupper(int c);
 int				ft_tolower(int c);
@@ -92,9 +92,9 @@ int				ft_atoi(const char *s);
 long			ft_atol(const char *s);
 long long		ft_atoll(const char *s);
 double			ft_atodbl(const char *s);
-double			ft_strtod(const char *str, char **endptr);
-long			ft_strtol(const char *str, char **endptr, int base);
-unsigned long	ft_strtoul(const char *nptr, char **endptr, int base);
+// double			ft_strtod(const char *str, char **endptr);
+// long			ft_strtol(const char *str, char **endptr, int base);
+// unsigned long	ft_strtoul(const char *nptr, char **endptr, int base);
 char			*ft_itoa(int n);
 // Memory allocation
 void			*ft_calloc(size_t count, size_t size);
@@ -125,9 +125,10 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 double			ft_pow(double base, int exp);
 
 //time
-void			ft_time_substract(struct timeval *result, struct timeval *a, struct timeval *b);
+void			ft_time_substract(struct timeval *result,
+					struct timeval *a, struct timeval *b);
 double			ft_time_to_ms(struct timeval *tv);
-long 			ft_time_to_us(struct timeval *tv);
+long			ft_time_to_us(struct timeval *tv);
 
 //printf
 int				ft_printf(const char *f, ...);

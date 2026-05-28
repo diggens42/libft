@@ -5,22 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fwahl <fwahl@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/13 03:58:53 by fwahl             #+#    #+#             */
-/*   Updated: 2025/09/13 04:05:46 by fwahl            ###   ########.fr       */
+/*   Created: 2025/09/24 17:01:37 by fwahl             #+#    #+#             */
+/*   Updated: 2026/05/28 16:25:17 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-// Subtract two timevals: result = a - b
-void ft_time_substract(struct timeval *result, struct timeval *a, struct timeval *b)
+int	ft_strcasecmp(const char *s1, const char *s2)
 {
-    result->tv_sec = a->tv_sec - b->tv_sec;
-    result->tv_usec = a->tv_usec - b->tv_usec;
+	unsigned char	c1;
+	unsigned char	c2;
 
-    if (result->tv_usec < 0)
-    {
-        result->tv_sec--;
-        result->tv_usec += 1000000;
-    }
+	if (!s1 || !s2)
+		return (s1 - s2);
+	while (*s1 && *s2)
+	{
+		c1 = (unsigned char)ft_tolower(*s1);
+		c2 = (unsigned char)ft_tolower(*s2);
+		if (c1 != c2)
+			return (c1 - c2);
+		s1++;
+		s2++;
+	}
+	c1 = (unsigned char)ft_tolower(*s1);
+	c2 = (unsigned char)ft_tolower(*s2);
+	return (c1 - c2);
 }

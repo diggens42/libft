@@ -6,13 +6,13 @@
 /*   By: fwahl <fwahl@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 04:02:26 by fwahl             #+#    #+#             */
-/*   Updated: 2025/09/13 04:03:11 by fwahl            ###   ########.fr       */
+/*   Updated: 2026/05/28 16:24:32 by fwahl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-double ft_time_to_ms(struct timeval *tv)
+double	ft_time_to_ms(struct timeval *tv)
 {
-    return (tv->tv_sec * 1000.0) + (tv->tv_usec / 1000.0);
+	return ((tv->tv_sec * 1000.0) + (tv->tv_usec / 1000.0));
 }
