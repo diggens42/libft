@@ -12,7 +12,7 @@
 
 #include "../libft.h"
 
-double	ft_time_to_ms(struct timeval *tv)
-{
-	return ((tv->tv_sec * 1000.0) + (tv->tv_usec / 1000.0));
-}
+// double	ft_time_to_ms(struct timeval *tv)
+// {
+// 	return ((tv->tv_sec * 1000.0) + (tv->tv_usec / 1000.0));
+// }

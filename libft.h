@@ -23,7 +23,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <fcntl.h>
-# include <sys/select.h>
+// # include <sys/select.h>
 # include <stdint.h>
 # include <stdio.h>
 # include <errno.h>
@@ -125,10 +125,10 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 double			ft_pow(double base, int exp);
 
 //time
-void			ft_time_substract(struct timeval *result,
-					struct timeval *a, struct timeval *b);
-double			ft_time_to_ms(struct timeval *tv);
-long			ft_time_to_us(struct timeval *tv);
+// void			ft_time_substract(struct timeval *result,
+// 					struct timeval *a, struct timeval *b);
+// double			ft_time_to_ms(struct timeval *tv);
+// long			ft_time_to_us(struct timeval *tv);
 
 //printf
 int				ft_printf(const char *f, ...);
