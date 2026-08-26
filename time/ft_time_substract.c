@@ -13,7 +13,8 @@
 #include "../libft.h"
 
 // Subtract two timevals: result = a - b
-// void ft_time_substract(struct timeval *result, struct timeval *a, struct timeval *b)
+// void ft_time_substract(struct timeval *result, struct timeval *a,
+// struct timeval *b)
 // {
 //     result->tv_sec = a->tv_sec - b->tv_sec;
 //     result->tv_usec = a->tv_usec - b->tv_usec;
