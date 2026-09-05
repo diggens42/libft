@@ -123,6 +123,7 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
 // math
 double			ft_pow(double base, int exp);
+int				ft_abs(int n);
 
 //time
 // void			ft_time_substract(struct timeval *result,
